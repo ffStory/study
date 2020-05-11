@@ -27,8 +27,12 @@ void testBiTree(){
     preOrder(tree);
 }
 
+void testList(){
+    
+}
+
 int main(int argc, const char * argv[]) {
 //    testSrot();
-    testBiTree();
+//    testBiTree();
     return 0;
 }

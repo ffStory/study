@@ -136,3 +136,23 @@ void levelOder(BiTreeNode *tree){
             q.push(temp->right);
     }
 }
+
+
+// 寻找最近父节点
+//class Solution {
+//public:
+//    BiTreeNode* ans;
+//    bool dfs(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
+//        if (root == nullptr) return false;
+//        bool lson = dfs(root->left, p, q);
+//        bool rson = dfs(root->right, p, q);
+//        if ((lson && rson) || ((root->value == p->value || root->value == q->value) && (lson || rson))) {
+//            ans = root;
+//        }
+//        return lson || rson || (root->value == p->value || root->value == q->value);
+//    }
+//    BiTreeNode* lowestCommonAncestor(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
+//        dfs(root, p, q);
+//        return ans;
+//    }
+//};
