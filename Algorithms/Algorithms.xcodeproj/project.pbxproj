@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CCA875C724692E1F005350AD /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCA875C624692E1F005350AD /* main.cpp */; };
-		CCA875D124692F48005350AD /* sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCA875CF24692F48005350AD /* sort.cpp */; };
+		CCA875D124692F48005350AD /* Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCA875CF24692F48005350AD /* Sort.cpp */; };
+		CCA875DB246935DA005350AD /* BinaryTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCA875D9246935DA005350AD /* BinaryTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +27,10 @@
 /* Begin PBXFileReference section */
 		CCA875C324692E1F005350AD /* Algorithms */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithms; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA875C624692E1F005350AD /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CCA875CF24692F48005350AD /* sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sort.cpp; sourceTree = "<group>"; };
-		CCA875D024692F48005350AD /* sort.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sort.hpp; sourceTree = "<group>"; };
+		CCA875CF24692F48005350AD /* Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sort.cpp; sourceTree = "<group>"; };
+		CCA875D024692F48005350AD /* Sort.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Sort.hpp; sourceTree = "<group>"; };
+		CCA875D9246935DA005350AD /* BinaryTree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryTree.cpp; sourceTree = "<group>"; };
+		CCA875DA246935DA005350AD /* BinaryTree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryTree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		CCA875C524692E1F005350AD /* Algorithms */ = {
 			isa = PBXGroup;
 			children = (
+				CCA875D624693536005350AD /* Tree */,
 				CCA875CD24692EB9005350AD /* Sort */,
 				CCA875C624692E1F005350AD /* main.cpp */,
 			);
@@ -69,10 +73,19 @@
 		CCA875CD24692EB9005350AD /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				CCA875CF24692F48005350AD /* sort.cpp */,
-				CCA875D024692F48005350AD /* sort.hpp */,
+				CCA875CF24692F48005350AD /* Sort.cpp */,
+				CCA875D024692F48005350AD /* Sort.hpp */,
 			);
 			path = Sort;
+			sourceTree = "<group>";
+		};
+		CCA875D624693536005350AD /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				CCA875D9246935DA005350AD /* BinaryTree.cpp */,
+				CCA875DA246935DA005350AD /* BinaryTree.hpp */,
+			);
+			path = Tree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA875C724692E1F005350AD /* main.cpp in Sources */,
-				CCA875D124692F48005350AD /* sort.cpp in Sources */,
+				CCA875D124692F48005350AD /* Sort.cpp in Sources */,
+				CCA875DB246935DA005350AD /* BinaryTree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

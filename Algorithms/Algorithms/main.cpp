@@ -7,7 +7,8 @@
 //
 
 #include <iostream>
-#include "Sort/sort.hpp"
+#include "Sort/Sort.hpp"
+#include "Tree/BinaryTree.hpp"
 using namespace std;
 
 void testSrot(){
@@ -19,8 +20,15 @@ void testSrot(){
     cout<<endl;
 }
 
+void testBiTree(){
+    cout << "创建二叉树"<<endl;
+    BiTreeNode *tree = nullptr;
+    createBiTree(tree);
+    preOrder(tree);
+}
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    testSrot();
+//    testSrot();
+    testBiTree();
     return 0;
 }
