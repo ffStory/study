@@ -1,8 +1,9 @@
 //
 //  main.cpp
-//  Arithmetic
+//  Algorithms
 //
 //  Created by FD on 2020/5/11.
+//  Copyright © 2020 FD. All rights reserved.
 //
 
 #include <iostream>
