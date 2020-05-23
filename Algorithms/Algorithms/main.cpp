@@ -31,8 +31,41 @@ void testList(){
     
 }
 
+class Base
+{
+public:
+    Base() {
+        cout<<"Base"<<endl;
+    }
+    ~Base() {
+        cout<<"~Base"<<endl;
+    }
+    friend class FinalClass;
+};
+ 
+class FinalClass : virtual public Base
+{
+public:
+    FinalClass() {
+        cout<<"FinalClass"<<endl;
+    }
+    ~FinalClass() {
+        cout<<"~FinalClass"<<endl;
+    }
+};
+
+class Test: public FinalClass{
+public:
+    Test() {
+        cout<<"Test"<<endl;
+    }
+    ~Test() {
+        cout<<"~Test"<<endl;
+    }
+};
+
 int main(int argc, const char * argv[]) {
-//    testSrot();
-//    testBiTree();
+    cout<<sizeof(int)<<endl;
+
     return 0;
 }
