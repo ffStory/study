@@ -24,6 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		585E9E9426396FF000B20D78 /* StringTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringTools.h; sourceTree = "<group>"; };
 		CC8E806C247E909300A41D9B /* CppPrimer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CppPrimer; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC8E806F247E909300A41D9B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CC8E8077247E936000A41D9B /* String.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = String.cpp; sourceTree = "<group>"; };
@@ -62,6 +63,7 @@
 			children = (
 				CC8E8076247E91A500A41D9B /* Overloaded */,
 				CC8E806F247E909300A41D9B /* main.cpp */,
+				585E9E9426396FF000B20D78 /* StringTools.h */,
 			);
 			path = CppPrimer;
 			sourceTree = "<group>";
@@ -253,7 +255,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72GPVVZSJY;
+				DEVELOPMENT_TEAM = W27JDLKGN4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -263,7 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 72GPVVZSJY;
+				DEVELOPMENT_TEAM = W27JDLKGN4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
