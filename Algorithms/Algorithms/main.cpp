@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "Sort/Sort.hpp"
+#include "List/List.hpp"
 #include "Tree/BinaryTree.hpp"
 using namespace std;
 
@@ -28,44 +29,12 @@ void testBiTree(){
 }
 
 void testList(){
-    
+    ListNode* head = createList(5);
+    reverseList(head);
+    printList(head);
 }
 
-class Base
-{
-public:
-    Base() {
-        cout<<"Base"<<endl;
-    }
-    ~Base() {
-        cout<<"~Base"<<endl;
-    }
-    friend class FinalClass;
-};
- 
-class FinalClass : virtual public Base
-{
-public:
-    FinalClass() {
-        cout<<"FinalClass"<<endl;
-    }
-    ~FinalClass() {
-        cout<<"~FinalClass"<<endl;
-    }
-};
-
-class Test: public FinalClass{
-public:
-    Test() {
-        cout<<"Test"<<endl;
-    }
-    ~Test() {
-        cout<<"~Test"<<endl;
-    }
-};
-
 int main(int argc, const char * argv[]) {
-    cout<<sizeof(int)<<endl;
-
+    testList();
     return 0;
 }

@@ -10,19 +10,43 @@
 #include <iostream>
 #include <stack>
 
-void printReverseList(ListNode *head) {
+ListNode* createList(int len){
+    ListNode* head = new ListNode();//创建头结点
+    head->value = len;
+    
+    ListNode* curr = head;
+    for (int i = 0; i < len; ++i) {
+        ListNode* temp = new ListNode();
+        temp->value = i;
+        temp->next = nullptr;
+        curr->next = temp;
+        curr = temp;
+    }
+    return head;
+}
+
+void printList(ListNode* head){
+    ListNode* curr = head->next; //打印跳过头结点
+    while (curr) {
+        std::cout<<curr->value<<std::endl;
+        curr = curr->next;
+    }
+}
+
+//递归的方式会把头结点打印出来
+void reversePrintByRecursion(ListNode *head) {
     if (head == nullptr){return;}
-    printReverseList(head);
+    reversePrintByRecursion(head->next);
     std::cout<<head->value<<std::endl;
 }
 
-void printTailToHead(ListNode* Head)
+void reversePrintByStack(ListNode* head)
 {
-    if(Head == NULL)
+    if(head == nullptr)
         return;
 
     std::stack<ListNode*> s;
-    ListNode* cur = Head;
+    ListNode* cur = head->next; //打印跳过头结点
     while(cur){
         s.push(cur);
         cur = cur->next;
@@ -31,28 +55,31 @@ void printTailToHead(ListNode* Head)
     //逆序打印
     while(!s.empty()){
         ListNode* top = s.top();
-        std::cout<<top->value;
+        std::cout<<top->value<<std::endl;
         s.pop();
     }
 }
 
-ListNode* ReverseList(ListNode* Head)
-{
-    if(Head == NULL)
-        return NULL;
 
-    ListNode* pre = NULL;
-    ListNode* cur = Head;
-    ListNode* newHead = NULL;
-    while(cur){
-        ListNode* Next = cur->next;
-
-        //cur是最后一个节点，即新链表的头
-        if(cur->next == NULL)
-            newHead = cur;
-        cur->next = pre;
-        pre = cur;
-        cur = Next;
+ListNode* reverseList(ListNode* head) {
+    ListNode* prev = nullptr;
+    ListNode* curr = head->next; //头结点下一个结点才是数据
+    while (curr != nullptr) {
+        ListNode* next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
-    return newHead;
+    head->next = prev; //头结点指向最后一个节点
+    return head;
 }
+
+// ListNode* reverseListByRecursion(ListNode* head) {
+//    if (head == nullptr || head->next == nullptr) {
+//        return head;
+//    }
+//    ListNode* newHead = reverseList(head->next);
+//    head->next->next = head;
+//    head->next = nullptr;
+//    return newHead;
+//}
