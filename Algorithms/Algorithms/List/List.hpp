@@ -10,7 +10,7 @@
 #define List_hpp
 
 #include <stdio.h>
-
+#include <unordered_set>
 struct ListNode {
     int value;
     ListNode *next;
@@ -30,4 +30,10 @@ void reversePrintByStack(ListNode* Head);
 ListNode* reverseListByRecursion(ListNode* head);
 //逆序链表
 ListNode* reverseList(ListNode* head);
+
+//判断是否有环,根据哈希表
+bool hasCycleBySet(ListNode *head);
+//判断是否有环,根据快慢指针
+bool hasCycleByPtr(ListNode *head);
+
 #endif /* List_hpp */
