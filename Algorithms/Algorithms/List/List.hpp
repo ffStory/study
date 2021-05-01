@@ -27,7 +27,7 @@ void reversePrintByRecursion(ListNode* head);
 void reversePrintByStack(ListNode* Head);
 
 //递归逆序链表
-ListNode* reverseListByRecursion(ListNode* head);
+//ListNode* reverseListByRecursion(ListNode* head);
 //逆序链表
 ListNode* reverseList(ListNode* head);
 
@@ -36,4 +36,8 @@ bool hasCycleBySet(ListNode *head);
 //判断是否有环,根据快慢指针
 bool hasCycleByPtr(ListNode *head);
 
+//获得倒数第k戈节点
+//第一种方式：想办法获得链表总长度，然后去n-k个节点
+//第二种方式：快慢指针
+ListNode* getKthFromEnd(ListNode* head, int k);
 #endif /* List_hpp */

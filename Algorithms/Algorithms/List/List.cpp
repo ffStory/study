@@ -112,3 +112,17 @@ bool hasCycleByPtr(ListNode* head) {
     return true;
 }
 
+ListNode* getKthFromEnd(ListNode* head, int k){
+    ListNode *slow = head;
+    ListNode *fast = head;
+    int t = 0;
+    while (fast != nullptr) {
+        if (t >= k){
+            slow = slow->next;
+        }
+        fast = fast->next;
+        t++;
+    }
+    return slow;
+}
+

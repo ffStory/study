@@ -30,11 +30,14 @@ void testBiTree(){
 
 void testList(){
     ListNode* head = createList(5);
-    reverseList(head);
-    printList(head);
+//    reverseList(head);
+//    printList(head);
+    ListNode* kthNode = getKthFromEnd(head, 2);
+    cout<<kthNode->value<<endl;
 }
 
 int main(int argc, const char * argv[]) {
     testList();
+    ListNode* node1, node2;
     return 0;
 }
