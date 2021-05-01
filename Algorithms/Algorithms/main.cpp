@@ -24,8 +24,12 @@ void testSrot(){
 void testBiTree(){
     cout << "创建二叉树"<<endl;
     BiTreeNode *tree = createBiTree();
-//    levelOder(tree);
-    levelOder(tree);
+    BiTreeNode *p = tree->left->left->left;
+    BiTreeNode *q = tree->left->right;
+    BiTreeNode *ancestor = lowestCommonAncestorByRecursive(tree, p, q);
+//    Solution su;
+//    BiTreeNode * ancestor = su.lowestCommonAncestor(tree, p, q);
+    cout<<ancestor->value<<endl;
 }
 
 void testList(){

@@ -33,6 +33,19 @@ BiTreeNode* createBiTree() {
     leftChild->right = lr;
     rightChild->left = rl;
     rightChild->right = rr;
+    
+    BiTreeNode *lll = new BiTreeNode();
+    lll->value = 8;
+    BiTreeNode *llr = new BiTreeNode();
+    llr->value = 9;
+    BiTreeNode *lrl = new BiTreeNode();
+    lrl->value = 10;
+    BiTreeNode *lrr = new BiTreeNode();
+    lrr->value = 11;
+    leftChild->left->left = lll;
+    leftChild->left->right = llr;
+    leftChild->right->left = lrl;
+    leftChild->right->right = lrr;
     return tree;
 }
 
@@ -147,22 +160,18 @@ void levelOder(BiTreeNode *tree){
     }
 }
 
-
-// 寻找最近父节点
-//class Solution {
-//public:
-//    BiTreeNode* ans;
-//    bool dfs(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
-//        if (root == nullptr) return false;
-//        bool lson = dfs(root->left, p, q);
-//        bool rson = dfs(root->right, p, q);
-//        if ((lson && rson) || ((root->value == p->value || root->value == q->value) && (lson || rson))) {
-//            ans = root;
-//        }
-//        return lson || rson || (root->value == p->value || root->value == q->value);
-//    }
-//    BiTreeNode* lowestCommonAncestor(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
-//        dfs(root, p, q);
-//        return ans;
-//    }
-//};
+BiTreeNode* lowestCommonAncestorByRecursive(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
+    //跳出条件：!root表示上个节点是叶子节点；(root == p || root == q)表示一旦递归到p或q，就不会再去找他们的子节点
+    if (!root || root == p || root == q) return root;
+    
+    //先递归左子树
+    BiTreeNode *left = lowestCommonAncestorByRecursive(root->left, p, q);
+    //在递归右子树
+    BiTreeNode *right = lowestCommonAncestorByRecursive(root->right, p, q);
+    
+    //如果在左右子树中都找到一个节点，则root为最近祖先节点。因为递归是从下往上找的
+    if (left && right) return root;
+    
+    //如果左或者右子树找到一个节点，向上传递这个节点；可以传递nullptr
+    return left ? left : right;
+}

@@ -10,6 +10,8 @@
 #define BinaryTree_hpp
 
 #include <stdio.h>
+#include <unordered_map>
+using namespace std;
 
 struct BiTreeNode {
     int value;
@@ -34,4 +36,42 @@ void postOrder(BiTreeNode *tree);
 
 //层次遍历：只需按层次遍历即可
 void levelOder(BiTreeNode *tree);
+
+//递归查找最近公共祖先
+BiTreeNode* lowestCommonAncestorByRecursive(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q);
+
+//hashMap 实现公共父节点
+class Solution {
+public:
+    //记录每个节点的父节点
+    unordered_map<BiTreeNode*, BiTreeNode*> parentRecords;
+    
+    //节点路径
+    unordered_map<BiTreeNode*, bool> vis;
+    
+    //递归遍历，初始化parentRecords
+    void dfs(BiTreeNode* root){
+        if (root->left != nullptr) {
+            parentRecords[root->left] = root;
+            dfs(root->left);
+        }
+        if (root->right != nullptr) {
+            parentRecords[root->right] = root;
+            dfs(root->right);
+        }
+    }
+    BiTreeNode* lowestCommonAncestor(BiTreeNode* root, BiTreeNode* p, BiTreeNode* q) {
+        parentRecords[root] = nullptr;
+        dfs(root);
+        while (p != nullptr) {
+            vis[p] = true;
+            p = parentRecords[p];
+        }
+        while (q != nullptr) {
+            if (vis[q]) return q;
+            q = parentRecords[q];
+        }
+        return nullptr;
+    }
+};
 #endif /* BinaryTree_hpp */
