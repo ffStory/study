@@ -10,6 +10,10 @@
 #include "Singleton.h"
 #include "Prototype.h"
 #include "Command.h"
+#include "Observer.h"
+#include "Proxy.h"
+#include "FactoryMethod.h"
+#include "AbstractFactory.h"
 using namespace std;
 
 void testSingleton(){
@@ -34,9 +38,59 @@ void testCommand(){
     invoker->SetCommand(sc, fc);
     invoker->Process();
 }
+void testObserver(){
+    Subject *subject = new Subject;
+    Observer *observer1 = new Observer(*subject);
+    Observer *observer2 = new Observer(*subject);
+    Observer *observer3 = new Observer(*subject);
+
+    subject->CreateMessage();
+}
+
+void testProxy(){
+    RealAction *action = new RealAction();
+    Proxy *proxy = new Proxy(action);
+    proxy->Request();
+    
+    delete action;
+    delete proxy;
+}
+
+void testFactoryMethod(){
+    SimpleFatory *factoryA = new SimpleFatoryA();
+    cout<< factoryA->GetProduct()->Operation() <<endl;;
+    SimpleFatory* factoryB = new SimpleFatoryB();
+    cout<< factoryB->GetProduct()->Operation() <<endl;;
+
+    delete factoryA;
+    delete factoryB;
+}
+
+void testAbstractFactory(){
+    AncientShip *as = new AncientShip();
+    as->CreateFactoryAge()->printAge();
+    as->CreateFactoryehicle()->printVehicle();
+    
+    cout<<"------------"<<endl;
+    
+    AncientCar *ac = new AncientCar();
+    ac->CreateFactoryAge()->printAge();
+    ac->CreateFactoryehicle()->printVehicle();
+    
+     cout<<"------------"<<endl;
+     
+     ModernShip *ms = new ModernShip();
+     ms->CreateFactoryAge()->printAge();
+     ms->CreateFactoryehicle()->printVehicle();
+    
+     cout<<"------------"<<endl;
+     
+     ModernCar *mc = new ModernCar();
+     mc->CreateFactoryAge()->printAge();
+     mc->CreateFactoryehicle()->printVehicle();
+}
 
 int main(int argc, const char * argv[]) {
-
-    testCommand();
+    testAbstractFactory();
     return 0;
 }
