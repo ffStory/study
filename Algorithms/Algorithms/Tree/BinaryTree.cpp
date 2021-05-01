@@ -10,20 +10,30 @@
 #include <stack>
 #include "BinaryTree.hpp"
 
-void createBiTree(BiTreeNode *tree) {
-    int value;
-    std::cin >> value;
-    if(value != '*')
-    {
-            tree = new BiTreeNode();
-            tree->value = value;
-            createBiTree(tree->left);//创建左子树
-            createBiTree(tree->right);//创建右子树
-    }
-    else // value==* 表示NULL
-    {
-            tree = NULL;
-    }
+BiTreeNode* createBiTree() {
+    BiTreeNode *tree = new BiTreeNode();
+    tree->value = 1;
+    
+    BiTreeNode *leftChild = new BiTreeNode();
+    leftChild->value = 2;
+    BiTreeNode *rightChild = new BiTreeNode();
+    rightChild->value = 3;
+    tree->left = leftChild;
+    tree->right = rightChild;
+    
+    BiTreeNode *ll = new BiTreeNode();
+    ll->value = 4;
+    BiTreeNode *lr = new BiTreeNode();
+    lr->value = 5;
+    BiTreeNode *rl = new BiTreeNode();
+    rl->value = 6;
+    BiTreeNode *rr = new BiTreeNode();
+    rr->value = 7;
+    leftChild->left = ll;
+    leftChild->right = lr;
+    rightChild->left = rl;
+    rightChild->right = rr;
+    return tree;
 }
 
 // 先序遍历-递归
@@ -45,7 +55,7 @@ void preOrder(BiTreeNode *root)
         while (t)
         {
             st.push(t);
-            printf("%c ", t->value);
+            std::cout<<t->value<<" ";
             t = t->left;
         }
         t = st.top();
@@ -58,8 +68,8 @@ void preOrder(BiTreeNode *root)
 // 中序遍历-递归
 void inOrderRecursive(BiTreeNode *tree) {
     if (tree) {
-        std::cout << tree->value << " ";
         inOrderRecursive(tree->left);
+        std::cout << tree->value << " ";
         inOrderRecursive(tree->right);
     }
 }
@@ -76,7 +86,7 @@ void inOrder(BiTreeNode *root)
             t = t->left;
         }
         t = st.top();
-        printf("%c ", t->value);
+        std::cout<<t->value<<" ";
         st.pop();
         t = t->right;
  
@@ -84,11 +94,11 @@ void inOrder(BiTreeNode *root)
 }
 
 // 后序遍历-递归
-void posOrderRecursive(BiTreeNode *tree) {
+void postOrderRecursive(BiTreeNode *tree) {
     if (tree) {
+        postOrderRecursive(tree->left);
+        postOrderRecursive(tree->right);
         std::cout << tree->value << " ";
-        posOrderRecursive(tree->left);
-        posOrderRecursive(tree->right);
     }
 }
 
@@ -106,7 +116,7 @@ void postOrder(BiTreeNode *root)
         p = sta.top();
         if( (p->left == NULL && p->right == NULL) || (p->right == NULL && last == p->left) || (last == p->right) )
         {
-            printf("%c ", p->value);
+            std::cout << p->value << " ";
             last = p;
             sta.pop();
         }
@@ -128,7 +138,7 @@ void levelOder(BiTreeNode *tree){
     while(!q.empty())
     {
         BiTreeNode* temp = q.front();
-        std::cout << tree->value<<std::endl;
+        std::cout << temp->value<<" ";
         q.pop();
         if(temp->left)
             q.push(temp->left);

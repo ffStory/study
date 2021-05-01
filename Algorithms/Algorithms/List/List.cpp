@@ -126,3 +126,10 @@ ListNode* getKthFromEnd(ListNode* head, int k){
     return slow;
 }
 
+
+void deleteNode(ListNode *head, int n){
+    
+}
+void insertNode(ListNode *head, ListNode *node){
+    
+}

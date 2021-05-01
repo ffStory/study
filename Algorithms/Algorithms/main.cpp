@@ -23,9 +23,9 @@ void testSrot(){
 
 void testBiTree(){
     cout << "创建二叉树"<<endl;
-    BiTreeNode *tree = nullptr;
-    createBiTree(tree);
-    preOrder(tree);
+    BiTreeNode *tree = createBiTree();
+//    levelOder(tree);
+    levelOder(tree);
 }
 
 void testList(){
@@ -37,7 +37,6 @@ void testList(){
 }
 
 int main(int argc, const char * argv[]) {
-    testList();
-    ListNode* node1, node2;
+    testBiTree();
     return 0;
 }

@@ -21,6 +21,9 @@ ListNode* createList(int len);
 
 void printList(ListNode* head);
 
+void deleteNode(ListNode *head, int n);
+void insertNode(ListNode *head, ListNode *node);
+
 //递归打印逆序链表
 void reversePrintByRecursion(ListNode* head);
 //栈结构打印逆序链表
@@ -38,6 +41,7 @@ bool hasCycleByPtr(ListNode *head);
 
 //获得倒数第k戈节点
 //第一种方式：想办法获得链表总长度，然后去n-k个节点
-//第二种方式：快慢指针
+//第二种方式：通过栈
+//第三种方式：快慢指针
 ListNode* getKthFromEnd(ListNode* head, int k);
 #endif /* List_hpp */
