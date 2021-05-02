@@ -117,7 +117,7 @@ void heapSort(int arr[], int len) {
         maxHeapify(arr, i, len - 1);
     }
     
-    // 依次把堆顶元素和末尾交换，且重新构建堆。（堆顶永远是最值）
+    // 依次把堆顶元素和次末尾交换，且重新构建堆。（堆顶永远是最值）
     for (int i = len - 1; i > 0; i--) {
         std::swap(arr[0], arr[i]);
         maxHeapify(arr, 0, i - 1);

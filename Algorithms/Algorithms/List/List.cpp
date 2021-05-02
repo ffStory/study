@@ -97,19 +97,19 @@ bool hasCycleBySet(ListNode *head) {
 }
 
 bool hasCycleByPtr(ListNode* head) {
-    if (head == nullptr || head->next == nullptr) {
-        return false;
-    }
+//    if (head == nullptr || head->next == nullptr) {
+//        return false;
+//    }
     ListNode* slow = head;
-    ListNode* fast = head->next;
-    while (slow != fast) {
-        if (fast == nullptr || fast->next == nullptr) {
-            return false;
-        }
+    ListNode* fast = head;
+    while (fast == nullptr || fast->next == nullptr) {
         slow = slow->next;
         fast = fast->next->next;
+        if (fast == slow){
+            return true;
+        }
     }
-    return true;
+    return false;
 }
 
 ListNode* getKthFromEnd(ListNode* head, int k){
@@ -132,4 +132,16 @@ void deleteNode(ListNode *head, int n){
 }
 void insertNode(ListNode *head, ListNode *node){
     
+}
+
+//思路：公共部分长度为c;两个链表单独长度分别为a,b;两个链表走的路程为：a+c+b = b+c+a 相遇；
+ListNode* checkIntersect(ListNode* headA, ListNode* headB){
+    ListNode *node1 = headA;
+    ListNode *node2 = headB;
+    
+    while (node1 != node2) {
+        node1 = node1 != NULL ? node1->next : headB;
+        node2 = node2 != NULL ? node2->next : headA;
+    }
+    return node1;
 }

@@ -44,4 +44,7 @@ bool hasCycleByPtr(ListNode *head);
 //第二种方式：通过栈
 //第三种方式：快慢指针
 ListNode* getKthFromEnd(ListNode* head, int k);
+
+//检查两个单链表是否相交，并且返回入口
+ListNode* checkIntersect(ListNode* a, ListNode* b);
 #endif /* List_hpp */
