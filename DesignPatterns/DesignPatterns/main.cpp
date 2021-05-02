@@ -14,6 +14,7 @@
 #include "Proxy.h"
 #include "FactoryMethod.h"
 #include "AbstractFactory.h"
+#include "Adapter.h"
 using namespace std;
 
 void testSingleton(){
@@ -90,7 +91,13 @@ void testAbstractFactory(){
      mc->CreateFactoryehicle()->printVehicle();
 }
 
+void testAdapter(){
+    Target *target = new Target;
+    Adaptee *adaptee = new Adaptee;
+    Adapter *adapter = new Adapter(adaptee);
+    cout<<adapter->Request()<<endl;
+}
 int main(int argc, const char * argv[]) {
-    testAbstractFactory();
+    testAdapter();
     return 0;
 }

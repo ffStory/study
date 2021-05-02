@@ -32,6 +32,7 @@
 		58658FDB263D6ECB00636D43 /* Proxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Proxy.h; sourceTree = "<group>"; };
 		58658FDC263D6EFB00636D43 /* Observer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Observer.h; sourceTree = "<group>"; };
 		58658FDD263D6F0C00636D43 /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		A51E0FC1263E4E8D007335D6 /* Adapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Adapter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +81,7 @@
 				58658FDB263D6ECB00636D43 /* Proxy.h */,
 				58658FDC263D6EFB00636D43 /* Observer.h */,
 				58658FDD263D6F0C00636D43 /* Command.h */,
+				A51E0FC1263E4E8D007335D6 /* Adapter.h */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
